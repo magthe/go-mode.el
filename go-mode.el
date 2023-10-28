@@ -2003,7 +2003,7 @@ Note that this will cause ‘go-mode’ to get loaded the first time
 you save any file, kind of defeating the point of autoloading."
 
   (interactive)
-  (when (eq major-mode 'go-mode) (gofmt)))
+  (when (memq major-mode '(go-mode go-ts-mode)) (gofmt)))
 
 (defun godoc--read-query ()
   "Read a godoc query from the minibuffer."
